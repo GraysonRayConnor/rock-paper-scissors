@@ -93,6 +93,82 @@ header {
 	}
 }
 
+.step2Area {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 90%;
+	margin: 0 auto;
+	img {
+		width: 3.5rem;
+	}
+}
+
+.outputContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 98%;
+}
+
+.titleContainer {
+	display: flex;
+	justify-content: space-between;
+	width: 93%;
+	margin: 0 auto;
+	font-size: 1.75rem;
+	margin-top: 2rem;
+}
+
+.pickStyle {
+	width: 11rem;
+	height: 11rem;
+	border-radius: 50%;
+	background: white;
+	border: 13px solid hsl(349, 71%, 52%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pickTitle {
+	color: white;
+}
+
+.computerPickTitle {
+	color: white;
+}
+
+.result {
+	color: white;
+}
+
+.win-lose-container {
+	display: none;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 60%;
+	margin: 0 auto;
+	margin-top: -8rem;
+	span {
+		font-size: 5rem;
+		font-weight: bold;
+		margin-bottom: 1.5rem;
+	}
+	button {
+		width: 100%;
+		padding: 1.5rem 0;
+		border-radius: 10px;
+		border: none;
+		font-size: 1.75rem;
+		letter-spacing: 2px;
+		font-family: "Barlow Semi Condensed", sans-serif;
+		text-transform: uppercase;
+		font-weight: lighter;
+	}
+}
+
 input[type="image"] {
 	width: 4rem;
 }
