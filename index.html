@@ -34,25 +34,32 @@
 			</div>
 		</header>
 
-		<section class="arena">
-			<form action="#">
-				<div class="top-row">
-					<div id="paper" class="arena-input">
-						<input type="image" src="images/icon-paper.svg" />
-					</div>
-					<div id="scissors" class="arena-input">
-						<input type="image" src="images/icon-scissors.svg" />
-					</div>
-				</div>
-				<div class="bottom-row">
-					<div id="rock" class="arena-input">
-						<input type="image" src="images/icon-rock.svg" />
-					</div>
-				</div>
-			</form>
-		</section>
+		<main>
+			<section id="arena">
+				<div id="topRow">
+					<button id="paper" data-selection="paper">
+						<img src="images/icon-paper.svg" alt="''" />
+					</button>
 
-		<div class="win-lose-container"></div>
+					<button id="scissors" data-selection="scissors">
+						<img src="images/icon-scissors.svg" alt="''" />
+					</button>
+				</div>
+				<div id="bottomRow" data-selection="rock">
+					<button id="rock"><img src="images/icon-rock.svg" alt="''" /></button>
+				</div>
+			</section>
+			<section id="gameResult">
+				<div id="playerResult">
+					<img src="images/icon-rock.svg" alt="''" />
+					<p>You picked...</p>
+				</div>
+				<div id="computerResult">
+					<img src="images/icon-scissors.svg" alt="''" />
+					<p>House picked...</p>
+				</div>
+			</section>
+		</main>
 
 		<section class="rules-box">
 			<button class="rules-btn">Rules</button>

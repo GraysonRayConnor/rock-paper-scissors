@@ -88,13 +88,13 @@ header .score-box #score {
   font-size: 5rem;
 }
 
-.arena {
+#arena {
   background-image: url(images/bg-triangle.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
+  margin: 0 auto;
   background-size: 75%;
-  height: 30rem;
-  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -102,71 +102,26 @@ header .score-box #score {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 0 auto;
-}
-
-.arena .top-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 auto;
-  position: relative;
-  bottom: 1rem;
-  width: 80%;
-}
-
-.arena .bottom-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  position: relative;
-  top: 3rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5rem 2rem;
+  display: none;
 }
 
-.arena .arena-input {
+#arena button {
   border-radius: 50%;
-  padding: 2.5rem;
-  background: white;
+  padding: 3rem;
 }
 
-.arena #paper {
-  border: 13px solid #4865f4;
+#arena button img {
+  width: 4rem;
 }
 
-.arena #rock {
-  border: 13px solid #dc2e4e;
-}
-
-.arena #scissors {
-  border: 13px solid #ec9e0e;
-}
-
-.step2Area {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.step2Area img {
-  width: 3.5rem;
-}
-
-.outputContainer {
+#arena #topRow {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,92 +132,79 @@ header .score-box #score {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 98%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 95%;
+  position: relative;
+  bottom: 3rem;
 }
 
-.titleContainer {
+#arena #bottomRow {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#arena #paper {
+  border: 13px solid #4865f4;
+}
+
+#arena #rock {
+  border: 13px solid #dc2e4e;
+}
+
+#arena #scissors {
+  border: 13px solid #ec9e0e;
+}
+
+#gameResult {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 93%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid red;
+  width: 80%;
   margin: 0 auto;
-  font-size: 1.75rem;
-  margin-top: 2rem;
 }
 
-.pickStyle {
-  width: 11rem;
-  height: 11rem;
+#gameResult img {
+  background: #ffffff;
   border-radius: 50%;
-  background: white;
-  border: 13px solid #dc2e4e;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 3rem;
+  width: 12rem;
+  min-height: 12rem;
+  min-height: 12rem;
+  border: 10px solid #dc2e4e;
 }
 
-.pickTitle {
+#gameResult p {
   color: white;
-}
-
-.computerPickTitle {
-  color: white;
-}
-
-.result {
-  color: white;
-}
-
-.win-lose-container {
-  display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 60%;
-  margin: 0 auto;
-  margin-top: -8rem;
-}
-
-.win-lose-container span {
-  font-size: 5rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-}
-
-.win-lose-container button {
-  width: 100%;
-  padding: 1.5rem 0;
-  border-radius: 10px;
-  border: none;
-  font-size: 1.75rem;
-  letter-spacing: 2px;
-  font-family: "Barlow Semi Condensed", sans-serif;
-  text-transform: uppercase;
-  font-weight: lighter;
-}
-
-input[type="image"] {
-  width: 4rem;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1.25rem;
 }
 
 .rules-box {
-  width: 100%;
   text-align: center;
   margin: 5rem auto;
 }
@@ -284,88 +226,5 @@ input[type="image"] {
 
 .attribution a {
   color: #3e52a3;
-}
-
-@media only screen and (min-width: 414px) {
-  html {
-    font-size: 11px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  header {
-    width: 70%;
-  }
-  html {
-    font-size: 13px;
-  }
-  .arena {
-    background-size: 40%;
-  }
-  .arena .top-row {
-    width: 50%;
-    top: 0.5rem;
-  }
-  .arena .bottom-row {
-    top: 3rem;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  html {
-    font-size: 15px;
-  }
-  header {
-    margin: 3rem auto 5rem auto;
-  }
-  .arena {
-    height: 35rem;
-  }
-  .arena .top-row {
-    top: 2.5rem;
-    width: 45%;
-  }
-  .arena .bottom-row {
-    top: 6rem;
-  }
-}
-
-@media only screen and (min-width: 1150px) {
-  html {
-    font-size: 18px;
-  }
-}
-
-@media only screen and (min-width: 1260px) {
-  html {
-    font-size: 20px;
-  }
-}
-
-@media only screen and (min-width: 1366px) {
-  html {
-    font-size: 21px;
-  }
-  .arena .bottom-row {
-    top: 7.5rem;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  html {
-    font-size: 18px;
-  }
-  header {
-    width: 60%;
-  }
-  .arena {
-    background-size: 35%;
-  }
-  .arena .top-row {
-    width: 40%;
-  }
-  .arena .bottom-row {
-    top: 9rem;
-  }
 }
 /*# sourceMappingURL=style.css.map */

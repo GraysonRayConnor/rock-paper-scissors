@@ -53,34 +53,31 @@ header {
 	}
 }
 
-.arena {
+#arena {
 	background-image: url(images/bg-triangle.svg);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 75%;
-	height: 30rem;
-	width: 90%;
-	display: flex;
-	flex-direction: column;
+	background-size: contain;
 	margin: 0 auto;
-	.top-row {
-		display: flex;
-		justify-content: space-between;
-		margin: 0 auto;
-		position: relative;
-		bottom: 1rem;
-		width: 80%;
-	}
-	.bottom-row {
-		display: flex;
-		justify-content: center;
-		position: relative;
-		top: 3rem;
-	}
-	.arena-input {
+	background-size: 75%;
+	@include flexIt(column, center, center);
+	padding: 5rem 2rem;
+	display: none;
+	button {
 		border-radius: 50%;
-		padding: 2.5rem;
-		background: white;
+		padding: 3rem;
+		img {
+			width: 4rem;
+		}
+	}
+	#topRow {
+		@include flexIt(row, space-between, center);
+		width: 95%;
+		position: relative;
+		bottom: 3rem;
+	}
+	#bottomRow {
+		@include flexIt(row, center, center);
 	}
 	#paper {
 		border: 13px solid hsl(230, 89%, 62%);
@@ -93,88 +90,29 @@ header {
 	}
 }
 
-.step2Area {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 90%;
+#gameResult {
+	@include flexIt(row, space-between, center);
+	border: 1px solid red;
+	width: 80%;
 	margin: 0 auto;
 	img {
-		width: 3.5rem;
+		background: #ffffff;
+		border-radius: 50%;
+		padding: 3rem;
+		width: 12rem;
+		min-height: 12rem;
+		min-height: 12rem;
+		border: 10px solid hsl(349, 71%, 52%);
 	}
-}
-
-.outputContainer {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width: 98%;
-}
-
-.titleContainer {
-	display: flex;
-	justify-content: space-between;
-	width: 93%;
-	margin: 0 auto;
-	font-size: 1.75rem;
-	margin-top: 2rem;
-}
-
-.pickStyle {
-	width: 11rem;
-	height: 11rem;
-	border-radius: 50%;
-	background: white;
-	border: 13px solid hsl(349, 71%, 52%);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.pickTitle {
-	color: white;
-}
-
-.computerPickTitle {
-	color: white;
-}
-
-.result {
-	color: white;
-}
-
-.win-lose-container {
-	display: none;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	width: 60%;
-	margin: 0 auto;
-	margin-top: -8rem;
-	span {
-		font-size: 5rem;
-		font-weight: bold;
-		margin-bottom: 1.5rem;
+	p {
+		color: white;
+		text-align: center;
+		font-size: 1.5rem;
+		margin-top: 1.25rem;
 	}
-	button {
-		width: 100%;
-		padding: 1.5rem 0;
-		border-radius: 10px;
-		border: none;
-		font-size: 1.75rem;
-		letter-spacing: 2px;
-		font-family: "Barlow Semi Condensed", sans-serif;
-		text-transform: uppercase;
-		font-weight: lighter;
-	}
-}
-
-input[type="image"] {
-	width: 4rem;
 }
 
 .rules-box {
-	width: 100%;
 	text-align: center;
 	margin: 5rem auto;
 }
@@ -194,92 +132,4 @@ input[type="image"] {
 }
 .attribution a {
 	color: hsl(228, 45%, 44%);
-}
-
-@media only screen and (min-width: 414px) {
-	html {
-		font-size: 11px;
-	}
-}
-
-@media only screen and (min-width: 768px) {
-	header {
-		width: 70%;
-	}
-	html {
-		font-size: 13px;
-	}
-	.arena {
-		background-size: 40%;
-		.top-row {
-			width: 50%;
-			top: 0.5rem;
-		}
-		.bottom-row {
-			top: 3rem;
-		}
-	}
-}
-
-@media only screen and (min-width: 1024px) {
-	html {
-		font-size: 15px;
-	}
-	header {
-		margin: 3rem auto 5rem auto;
-	}
-
-	.arena {
-		height: 35rem;
-		.top-row {
-			top: 2.5rem;
-			width: 45%;
-		}
-		.bottom-row {
-			top: 6rem;
-		}
-	}
-}
-
-@media only screen and (min-width: 1150px) {
-	html {
-		font-size: 18px;
-	}
-}
-
-@media only screen and (min-width: 1260px) {
-	html {
-		font-size: 20px;
-	}
-}
-
-@media only screen and (min-width: 1366px) {
-	html {
-		font-size: 21px;
-	}
-	.arena {
-		.bottom-row {
-			top: 7.5rem;
-		}
-	}
-}
-
-@media only screen and (min-width: 1440px) {
-	html {
-		font-size: 18px;
-	}
-
-	header {
-		width: 60%;
-	}
-
-	.arena {
-		background-size: 35%;
-		.top-row {
-			width: 40%;
-		}
-		.bottom-row {
-			top: 9rem;
-		}
-	}
 }
