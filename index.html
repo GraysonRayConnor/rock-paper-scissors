@@ -30,7 +30,7 @@
 			</div>
 			<div class="score-box">
 				<span class="score-label">score</span>
-				<span id="score">12</span>
+				<span id="score">0</span>
 			</div>
 		</header>
 
@@ -49,21 +49,34 @@
 					<button id="rock"><img src="images/icon-rock.svg" alt="''" /></button>
 				</div>
 			</section>
-			<section id="gameResult">
-				<div id="playerResult">
-					<img src="images/icon-rock.svg" alt="''" />
-					<p>You picked...</p>
+			<section id="gameResultContainer">
+				<div id="gameResult">
+					<div class="result">
+						<img id="playerResult" src="" alt="''" />
+						<p>You picked...</p>
+					</div>
+					<div class="result">
+						<img id="computerResult" src="" alt="''" />
+						<p>House picked...</p>
+					</div>
 				</div>
-				<div id="computerResult">
-					<img src="images/icon-scissors.svg" alt="''" />
-					<p>House picked...</p>
+				<div id="resultTitleContainer">
+					<span id="resultTitle"></span>
+					<div id="resultBtns">
+						<button id="playAgain">Play Again</button>
+						<button id="newGame">Reset score</button>
+					</div>
 				</div>
 			</section>
+			<section class="rules-modal">
+				<span>rules</span>
+				<img src="images/image-rules.svg" alt="''" />
+				<button id="closeRules">X</button>
+			</section>
+			<section class="rules-box">
+				<button id="rules-btn">Rules</button>
+			</section>
 		</main>
-
-		<section class="rules-box">
-			<button class="rules-btn">Rules</button>
-		</section>
 
 		<div class="attribution">
 			Challenge by
