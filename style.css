@@ -115,6 +115,7 @@ header .score-box #score {
 #arena button {
   border-radius: 50%;
   padding: 3rem;
+  background: #ffffff;
 }
 
 #arena button img {
@@ -262,6 +263,7 @@ header .score-box #score {
   margin-top: 1.25rem;
   border: none;
   font-weight: bold;
+  background: #ffffff;
 }
 
 .rules-box {
