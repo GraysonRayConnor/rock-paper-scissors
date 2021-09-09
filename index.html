@@ -29,8 +29,18 @@
 				<span>Scissors</span>
 			</div>
 			<div class="score-box">
-				<span class="score-label">score</span>
-				<span id="score">0</span>
+				<div class="score">
+					<span class="score-label">house</span>
+					<span id="computerScoreOp">0</span>
+				</div>
+				<div id="bestOfThreeOp">
+					<span id="bestOfThreeOpLabel">Round</span>
+					<p><span id="bestOfThreeCount">0</span><span>/3</span></p>
+				</div>
+				<div class="score">
+					<span class="score-label">player</span>
+					<span id="playerScoreOp">0</span>
+				</div>
 			</div>
 		</header>
 
@@ -74,6 +84,10 @@
 				<button id="closeRules">X</button>
 			</section>
 			<section class="rules-box">
+				<div id="bestOfThreeContainer">
+					<label>Best of three?</label>
+					<input id="bestOfThree" type="checkbox" />
+				</div>
 				<button id="rules-btn">Rules</button>
 			</section>
 		</main>

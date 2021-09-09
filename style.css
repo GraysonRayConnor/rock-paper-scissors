@@ -38,6 +38,8 @@ header {
   width: 85%;
   padding: 10px;
   border-radius: 8px;
+  /*----------------------------------*/
+  /*----------------------------------*/
 }
 
 header .title {
@@ -65,6 +67,30 @@ header .score-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 12rem;
+  padding: 0.25rem 1rem;
+  border-radius: 8px;
+}
+
+header .score-box .score-label {
+  font-size: 1.25rem;
+  color: #2a46c0;
+}
+
+header .score-box .score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -75,18 +101,37 @@ header .score-box {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 8rem;
-  padding: 0.25rem 0;
-  border-radius: 8px;
-}
-
-header .score-box .score-label {
-  font-size: 1.5rem;
-  color: #2a46c0;
-}
-
-header .score-box #score {
   font-size: 5rem;
+}
+
+header #bestOfThreeOp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  text-align: center;
+}
+
+header #bestOfThreeOp #bestOfThreeOpLabel {
+  font-size: 1.25rem;
+}
+
+header #bestOfThreeOp p {
+  font-size: 1.75rem;
+}
+
+header .bestOfThreeOn {
+  width: 15rem;
 }
 
 #arena {
@@ -195,7 +240,7 @@ header .score-box #score {
   background: #ffffff;
   border-radius: 50%;
   padding: 3rem;
-  width: 12rem;
+  width: 13rem;
   /*min-height: 13rem;
 		min-width: 13rem;*/
   border: 13px solid #dc2e4e;
@@ -271,6 +316,16 @@ header .score-box #score {
   margin: 5rem auto;
 }
 
+#bestOfThreeContainer {
+  margin-bottom: 1.5rem;
+}
+
+#bestOfThreeContainer label {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  color: #606e85;
+}
+
 #rules-btn {
   width: 9rem;
   height: 3rem;
@@ -318,7 +373,7 @@ header .score-box #score {
   border: none;
   color: #b3b6c6;
   position: relative;
-  top: 10rem;
+  top: 5rem;
 }
 
 .attribution {
@@ -452,18 +507,22 @@ header .score-box #score {
 
 @media only screen and (min-width: 1366px) {
   html {
-    font-size: 20px;
+    font-size: 15px;
+  }
+  header {
+    width: 45%;
+    margin: 3rem auto 10rem auto;
   }
   #arena {
-    background-size: 40%;
+    background-size: 30%;
     padding: 0;
   }
   #arena #topRow {
-    width: 48%;
-    bottom: 4.5rem;
+    width: 36%;
+    bottom: 4rem;
   }
   #arena #bottomRow {
-    top: 0;
+    top: -0.5rem;
   }
   #arena #paper {
     border: 25px solid #4865f4;
@@ -474,12 +533,97 @@ header .score-box #score {
   #arena #scissors {
     border: 25px solid #ec9e0e;
   }
+  #gameResultContainer {
+    max-height: 20rem;
+    position: relative;
+    top: -3rem;
+  }
+  #gameResult {
+    width: 70%;
+  }
+  #gameResult img {
+    padding: 4rem;
+    width: 17rem;
+    border: 25px solid #dc2e4e;
+  }
+  #gameResult p {
+    font-size: 2rem;
+  }
+  #resultTitleContainer {
+    position: relative;
+    top: -18rem;
+  }
+  #resultTitleContainer #resultBtns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50%;
+  }
   .rules-box {
     text-align: right;
     margin: 0 3rem 0 2rem;
   }
+  .rules-modal {
+    width: 30%;
+    height: 60%;
+  }
+  .rules-modal img {
+    width: 20rem;
+  }
+  .rules-modal span {
+    top: -2rem;
+  }
+  .rules-modal button {
+    top: 2rem;
+  }
   .attribution {
     margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  #arena {
+    background-size: 25%;
+  }
+  #arena #topRow {
+    width: 33%;
+    top: -2.5rem;
+  }
+}
+
+@media only screen and (min-width: 1640px) {
+  #arena #topRow {
+    width: 30%;
+    top: -4rem;
+  }
+  #gameResult {
+    width: 60%;
+  }
+}
+
+@media only screen and (min-width: 1780px) {
+  html {
+    font-size: 13px;
+  }
+  #arena {
+    background-size: 20%;
+  }
+  #arena #topRow {
+    width: 25%;
+    top: -4rem;
+  }
+  #gameResult {
+    width: 50%;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -37,21 +37,41 @@ header {
 		padding-left: 0.75rem;
 		text-transform: uppercase;
 	}
+	/*----------------------------------*/
 	.score-box {
 		color: black;
 		background: white;
-		@include flexIt(column, center, center);
-		width: 8rem;
-		padding: 0.25rem 0;
+		@include flexIt(row, space-between, center);
+		width: 12rem;
+		padding: 0.25rem 1rem;
 		border-radius: 8px;
 		.score-label {
-			font-size: 1.5rem;
+			font-size: 1.25rem;
 			color: hsl(229, 64%, 46%);
 		}
-		#score {
+		.score {
+			@include flexIt(column, center, center);
 			font-size: 5rem;
 		}
 	}
+
+	#bestOfThreeOp {
+		@include flexIt(column, center, center);
+		display: none;
+		text-align: center;
+		#bestOfThreeOpLabel {
+			font-size: 1.25rem;
+		}
+		p {
+			font-size: 1.75rem;
+		}
+	}
+
+	.bestOfThreeOn {
+		width: 15rem;
+	}
+
+	/*----------------------------------*/
 }
 
 #arena {
@@ -103,7 +123,7 @@ header {
 		background: #ffffff;
 		border-radius: 50%;
 		padding: 3rem;
-		width: 12rem;
+		width: 13rem;
 		/*min-height: 13rem;
 		min-width: 13rem;*/
 		border: 13px solid hsl(349, 71%, 52%);
@@ -153,6 +173,15 @@ header {
 	margin: 5rem auto;
 }
 
+#bestOfThreeContainer {
+	margin-bottom: 1.5rem;
+	label {
+		font-size: 1.5rem;
+		margin-right: 0.5rem;
+		color: hsl(217, 16%, 45%);
+	}
+}
+
 #rules-btn {
 	width: 9rem;
 	height: 3rem;
@@ -185,7 +214,7 @@ header {
 		border: none;
 		color: #b3b6c6;
 		position: relative;
-		top: 10rem;
+		top: 5rem;
 	}
 }
 
@@ -327,17 +356,21 @@ header {
 
 @media only screen and (min-width: 1366px) {
 	html {
-		font-size: 20px;
+		font-size: 15px;
+	}
+	header {
+		width: 45%;
+		margin: 3rem auto 10rem auto;
 	}
 	#arena {
-		background-size: 40%;
+		background-size: 30%;
 		padding: 0;
 		#topRow {
-			width: 48%;
-			bottom: 4.5rem;
+			width: 36%;
+			bottom: 4rem;
 		}
 		#bottomRow {
-			top: 0;
+			top: -0.5rem;
 		}
 		#paper {
 			border: 25px solid hsl(230, 89%, 62%);
@@ -349,12 +382,91 @@ header {
 			border: 25px solid hsl(39, 89%, 49%);
 		}
 	}
+
+	#gameResultContainer {
+		max-height: 20rem;
+		position: relative;
+		top: -3rem;
+	}
+
+	#gameResult {
+		width: 70%;
+		img {
+			padding: 4rem;
+			width: 17rem;
+			border: 25px solid hsl(349, 71%, 52%);
+		}
+		p {
+			font-size: 2rem;
+		}
+	}
+
+	#resultTitleContainer {
+		position: relative;
+		top: -18rem;
+		#resultBtns {
+			@include flexIt(column, space-between, center);
+			width: 50%;
+		}
+	}
 	.rules-box {
 		text-align: right;
 		margin: 0 3rem 0 2rem;
 	}
 
+	.rules-modal {
+		width: 30%;
+		height: 60%;
+		img {
+			width: 20rem;
+		}
+		span {
+			top: -2rem;
+		}
+		button {
+			top: 2rem;
+		}
+	}
+
 	.attribution {
 		margin-top: 2rem;
+	}
+}
+
+@media only screen and (min-width: 1440px) {
+	#arena {
+		background-size: 25%;
+		#topRow {
+			width: 33%;
+			top: -2.5rem;
+		}
+	}
+}
+
+@media only screen and (min-width: 1640px) {
+	#arena {
+		#topRow {
+			width: 30%;
+			top: -4rem;
+		}
+	}
+	#gameResult {
+		width: 60%;
+	}
+}
+
+@media only screen and (min-width: 1780px) {
+	html {
+		font-size: 13px;
+	}
+	#arena {
+		background-size: 20%;
+		#topRow {
+			width: 25%;
+			top: -4rem;
+		}
+	}
+	#gameResult {
+		width: 50%;
 	}
 }
